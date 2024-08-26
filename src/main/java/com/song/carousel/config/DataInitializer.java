@@ -59,7 +59,7 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private List<SongData> getSongData() throws IOException {
-        var jsonFile = new ClassPathResource("songs.json");
+        var jsonFile = new ClassPathResource("songs/songs.json");
         return objectMapper.readValue(jsonFile.getInputStream(), new TypeReference<>() {});
     }
 
