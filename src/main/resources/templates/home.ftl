@@ -12,7 +12,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #e6e0f8;
         }
         .container {
             text-align: center;
@@ -37,7 +37,6 @@
 </head>
 <body>
 <div class="container">
-    <!-- Update the href to navigate to /song -->
     <a href="/song" class="button">Druk hier voor een kinderliedje!</a>
 </div>
 </body>
