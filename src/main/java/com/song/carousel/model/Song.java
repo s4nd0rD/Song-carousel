@@ -19,14 +19,11 @@ public class Song {
     @Field(name = "lyrics")
     private String lyrics;
 
-    // Getters and setters
+    @Field(name = "youTube")
+    private String youTube;
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -51,6 +48,14 @@ public class Song {
 
     public void setLyrics(String lyrics) {
         this.lyrics = lyrics;
+    }
+
+    public String getYouTube() {
+        return youTube;
+    }
+
+    public void setYouTube(String youTube) {
+        this.youTube = youTube;
     }
 
     public static class Image {

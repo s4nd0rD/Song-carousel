@@ -12,7 +12,8 @@
             align-items: center;
             justify-content: center;
             margin: 0;
-            background-color: #d8b4dd;
+            background-color: #d8b4dd; /* Pastel purple background */
+            background-image: url('/backgrounds/music_notes_background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
         }
@@ -24,6 +25,9 @@
             background: white; /* Add white background to song details for better contrast */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+            display: flex;
+            flex-direction: column; /* Ensure items stack vertically */
+            align-items: center;
         }
         .song-title {
             font-size: 2rem; /* Adjust font size for responsiveness */
@@ -47,6 +51,12 @@
             display: block;
             margin: 20px auto;
         }
+        .youtube-player {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            margin: 20px 0;
+        }
         .back-button {
             display: inline-block;
             font-size: 1rem;
@@ -58,7 +68,7 @@
             text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-top: 20px; /* Ensure some space above the button */
             transition: background-color 0.3s ease;
         }
         .back-button:hover {
@@ -76,6 +86,9 @@
             .song-image {
                 max-height: 300px;
             }
+            .youtube-player {
+                height: 200px; /* Adjust height for smaller screens */
+            }
         }
     </style>
 </head>
@@ -84,9 +97,11 @@
     <h1 class="song-title">${song.title}</h1>
     <img src="/image/${song.id}" alt="${song.title}" class="song-image"/>
     <div class="song-lyrics">
-        <p>${song.lyrics}</p>
-        <a href="/" class="back-button">Terug</a>
+        <p>${song.lyrics?replace('\n', '<br/>')}</p>
     </div>
+    <!-- YouTube embedded player -->
+    <iframe class="youtube-player" src="https://www.youtube.com/embed/${song.youTube}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <a href="/" class="back-button">Terug</a>
 </div>
 </body>
 </html>

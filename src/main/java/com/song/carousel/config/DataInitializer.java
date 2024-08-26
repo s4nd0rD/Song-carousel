@@ -49,6 +49,7 @@ public class DataInitializer implements CommandLineRunner {
                 song.setTitle(songData.title);
                 song.setImage(image);
                 song.setLyrics(songData.lyrics);
+                song.setYouTube(songData.youTube);
 
                 songRepository.save(song);
             }
@@ -67,11 +68,13 @@ public class DataInitializer implements CommandLineRunner {
         String title;
         String imageName;
         String lyrics;
+        String youTube;
 
-        SongData(String title, String imageName, String lyrics) {
+        SongData(String title, String imageName, String lyrics, String youTube) {
             this.title = title;
             this.imageName = imageName;
             this.lyrics = lyrics;
+            this.youTube = youTube;
         }
     }
 }
