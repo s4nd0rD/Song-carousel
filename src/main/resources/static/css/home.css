@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e6e0f8;
+    background-image: url('/music_notes_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.container {
+    text-align: center;
+    width: 70%;
+}
+.button {
+    font-size: 24px;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    margin-bottom: 20px; /* Add space between buttons */
+}
+.button:hover {
+    background-color: darkred;
+}
+.baby-blue-button {
+    display: inline-block;
+    font-size: 1rem;
+    color: white;
+    background-color: #89CFF0; /* Baby blue color */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 50%; /* Half the width of the red button */
+    transition: background-color 0.3s ease;
+}
+.baby-blue-button:hover {
+    background-color: #6FB7E9;
+}
+.top-button {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bottom-button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    .button {
+        font-size: 20px;
+        padding: 15px;
+    }
+}

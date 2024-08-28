@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SongController {
@@ -39,5 +40,26 @@ public class SongController {
     @GetMapping("/image/{songId}")
     public ResponseEntity<ByteArrayResource> getImage(@PathVariable String songId) {
         return songService.getImage(songId);
+    }
+
+    @GetMapping("/song-archive")
+    public String getSongArchive(Model model) {
+        var songOverview = songService.getAllSongTitlesAndIds();
+        model.addAttribute("songOverview", songOverview);
+        return "song-archive";
+    }
+
+    @GetMapping("/song/{songId}")
+    public String getSongById(@PathVariable String songId, @RequestParam(required = false) String origin, Model model) {
+        var song = songService.getSongById(songId);
+        if (song == null) {
+            model.addAttribute("message", "Het liedje is niet gevonden.");
+            return "selected-song";
+        }
+        model.addAttribute("song", song);
+        if (origin != null) {
+            model.addAttribute("origin", origin);
+        }
+        return "selected-song";
     }
 }

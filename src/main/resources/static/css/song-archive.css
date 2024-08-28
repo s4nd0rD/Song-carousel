@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e6e0f8;
+    background-image: url('/music_notes_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 70%;
+    max-width: 800px;
+    margin: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+a {
+    text-decoration: underline;
+    color: blue;
+}
+a:hover {
+    text-decoration: underline;
+    color: darkblue;
+}
+.suggestion-box {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.suggestion-box textarea {
+    width: 80%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: block; /* Ensure textarea is a block element */
+    margin: 0 auto; /* Center the textarea */
+}
+.suggestion-box textarea::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Transparent placeholder */
+    font-style: italic; /* Cursive style */
+}
+.submit-button {
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: green;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Ensure button is a block element */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px auto 0; /* Center the button and add margin */
+}
+.submit-button:hover {
+    background-color: darkgreen;
+}
+.back-button {
+    display: inline-block;
+    font-size: 1rem;
+    color: white; /* Set text color to white */
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Ensure some space above the button */
+    transition: background-color 0.3s ease;
+}
+.back-button a {
+    color: white; /* Ensure link text is white */
+    text-decoration: none; /* Remove underline from the link */
+}
+.back-button:hover {
+    background-color: darkred;
+}
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        top: 20%;
+    }
+    .submit-button {
+        width: 60%;
+        font-size: 16px;
+        padding: 10px;
+    }
+}

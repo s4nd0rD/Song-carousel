@@ -1,6 +1,7 @@
 package com.song.carousel.service;
 
 import com.song.carousel.model.Song;
+import com.song.carousel.model.SongOverviewItem;
 import com.song.carousel.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Service
 public class SongService {
@@ -20,10 +22,6 @@ public class SongService {
     @Autowired
     public SongService(SongRepository songRepository) {
         this.songRepository = songRepository;
-    }
-
-    public List<Song> getAllSongs() {
-        return songRepository.findAll();
     }
 
     public Song getRandomSong() {
@@ -52,5 +50,15 @@ public class SongService {
                 .header(HttpHeaders.CONTENT_TYPE, contentType)
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + imageName + "\"")
                 .body(resource);
+    }
+
+    public List<SongOverviewItem> getAllSongTitlesAndIds() {
+        return songRepository.findAll().stream()
+                .map(song -> new SongOverviewItem(song.getId(), song.getTitle()))
+                .collect(Collectors.toList());
+    }
+
+    public Song getSongById(String songId) {
+        return songRepository.findById(songId).orElse(null);
     }
 }
