@@ -1,15 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    background-color: #d8b4dd; /* Pastel purple background */
-    background-image: url('/music_notes_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+@import url('/static/css/common.css');
+
 .song-details {
     max-width: 90%; /* Adjust max-width to fit smaller screens */
     margin: 0 auto;
@@ -23,10 +13,13 @@ body {
     align-items: center;
 }
 .song-title {
-    font-size: 2rem; /* Adjust font size for responsiveness */
+    font-size: 2rem;
     color: #333;
     margin-bottom: 15px;
     text-align: center;
+    padding: 0 10px; /* Add padding to ensure the title is not cut off */
+    box-sizing: border-box;
+    word-wrap: break-word; /* Ensure long words break to the next line */
 }
 .song-lyrics {
     font-size: 1rem; /* Adjust font size for better readability on mobile */
@@ -39,10 +32,9 @@ body {
 }
 .song-image {
     max-width: 100%;
-    max-height: 400px;
+    max-height: 300px;
     height: auto;
     display: block;
-    margin: 20px auto;
 }
 .youtube-player {
     width: 100%;
@@ -50,43 +42,18 @@ body {
     height: 315px;
     margin: 20px 0;
 }
-.back-button {
-    display: inline-block;
-    font-size: 1rem;
-    color: white; /* Set text color to white */
-    background-color: red;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px; /* Ensure some space above the button */
-    transition: background-color 0.3s ease;
-}
-.back-button a {
-    color: white; /* Ensure link text is white */
-    text-decoration: none; /* Remove underline from the link */
-}
-.back-button:hover {
-    background-color: darkred;
-}
-.back-button:hover {
-    background-color: darkred;
-}
-/* Add media query for smaller screens */
 @media (max-width: 600px) {
     .song-title {
         font-size: 1.5rem;
     }
     .song-lyrics {
         font-size: 0.9rem;
-        max-height: 50vh;
+        max-height: 40vh;
     }
     .song-image {
         max-height: 300px;
     }
     .youtube-player {
-        height: 200px; /* Adjust height for smaller screens */
+        height: 200px;
     }
 }

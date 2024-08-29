@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Align items at the start of the flex container */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 100px; /* Add padding to push content further from the top */
+    background-color: #e6e0f8;
+    background-image: url('/static/background/music_notes_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.back-button {
+    display: inline-block;
+    font-size: 1rem;
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button a {
+    color: white;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    background-color: darkred;
+}

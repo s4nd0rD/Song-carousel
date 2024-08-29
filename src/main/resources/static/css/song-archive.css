@@ -1,15 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #e6e0f8;
-    background-image: url('/music_notes_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+@import url('/static/css/common.css');
+
 .container {
     background-color: white;
     padding: 20px;
@@ -52,12 +42,12 @@ a:hover {
     resize: none;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-    display: block; /* Ensure textarea is a block element */
-    margin: 0 auto; /* Center the textarea */
+    display: block;
+    margin: 0 auto;
 }
 .suggestion-box textarea::placeholder {
-    color: rgba(0, 0, 0, 0.5); /* Transparent placeholder */
-    font-style: italic; /* Cursive style */
+    color: rgba(0, 0, 0, 0.5);
+    font-style: italic;
 }
 .submit-button {
     margin-top: 10px;
@@ -68,35 +58,14 @@ a:hover {
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
-    display: block; /* Ensure button is a block element */
+    display: block;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin: 10px auto 0; /* Center the button and add margin */
+    margin: 10px auto 0;
 }
 .submit-button:hover {
     background-color: darkgreen;
-}
-.back-button {
-    display: inline-block;
-    font-size: 1rem;
-    color: white; /* Set text color to white */
-    background-color: red;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px; /* Ensure some space above the button */
-    transition: background-color 0.3s ease;
-}
-.back-button a {
-    color: white; /* Ensure link text is white */
-    text-decoration: none; /* Remove underline from the link */
-}
-.back-button:hover {
-    background-color: darkred;
 }
 @media (max-width: 600px) {
     .container {

@@ -1,16 +1,5 @@
-/* src/main/resources/static/css/suggestion.css */
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #e6e0f8;
-    background-image: url('/music_notes_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+@import url('/static/css/common.css');
+
 .container {
     background: white;
     border-radius: 10px;
@@ -23,25 +12,4 @@ body {
 .message {
     font-size: 1.5rem;
     color: #333;
-}
-.back-button {
-    display: inline-block;
-    font-size: 1rem;
-    color: white; /* Set text color to white */
-    background-color: red;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none; /* Remove underline */
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px; /* Ensure some space above the button */
-    transition: background-color 0.3s ease;
-}
-.back-button a {
-    color: white; /* Ensure link text is white */
-    text-decoration: none; /* Remove underline from the link */
-}
-.back-button:hover {
-    background-color: darkred;
 }

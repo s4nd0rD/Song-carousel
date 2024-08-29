@@ -1,16 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #e6e0f8;
-    background-image: url('/music_notes_background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}
+@import url('/static/css/common.css');
+
 .container {
     text-align: center;
     width: 70%;
@@ -28,7 +17,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 80%;
-    margin-bottom: 20px; /* Add space between buttons */
+    margin-bottom: 20px;
 }
 .button:hover {
     background-color: darkred;
@@ -37,7 +26,7 @@ body {
     display: inline-block;
     font-size: 1rem;
     color: white;
-    background-color: #89CFF0; /* Baby blue color */
+    background-color: #89CFF0;
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -45,7 +34,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-bottom: 20px;
-    width: 50%; /* Half the width of the red button */
+    width: 50%;
     transition: background-color 0.3s ease;
 }
 .baby-blue-button:hover {

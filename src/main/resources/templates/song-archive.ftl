@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Song Archive</title>
     <link rel="stylesheet" type="text/css" href="/static/css/song-archive.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/home.css">
 </head>
 <body>
 <div class="container">
