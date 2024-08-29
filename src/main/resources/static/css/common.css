@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: flex-start; /* Align items at the start of the flex container */
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensure the body can expand to fit content */
     margin: 0;
     padding-top: 100px; /* Add padding to push content further from the top */
     background-color: #e6e0f8;

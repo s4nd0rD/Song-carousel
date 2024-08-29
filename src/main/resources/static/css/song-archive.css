@@ -1,38 +1,57 @@
 @import url('/static/css/common.css');
 
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 .container {
     background-color: white;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 70%;
     max-width: 800px;
-    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center container horizontally */
 }
+
 ul {
     list-style-type: none;
     padding: 0;
 }
+
 li {
     font-size: 18px;
     margin: 10px 0;
 }
+
 a {
     text-decoration: underline;
     color: blue;
 }
+
 a:hover {
     text-decoration: underline;
     color: darkblue;
 }
+
 .suggestion-box {
     margin-top: 20px;
     width: 100%;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
 .suggestion-box textarea {
     width: 80%;
     padding: 15px;
@@ -45,10 +64,12 @@ a:hover {
     display: block;
     margin: 0 auto;
 }
+
 .suggestion-box textarea::placeholder {
     color: rgba(0, 0, 0, 0.5);
     font-style: italic;
 }
+
 .submit-button {
     margin-top: 10px;
     font-size: 18px;
@@ -57,23 +78,32 @@ a:hover {
     border: none;
     padding: 10px 20px;
     text-align: center;
-    text-decoration: none;
     display: block;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin: 10px auto 0;
 }
+
 .submit-button:hover {
     background-color: darkgreen;
 }
+
 @media (max-width: 600px) {
+    body {
+        height: auto;
+        display: block; /* Switch to block layout for small screens */
+    }
+
     .container {
         width: 90%;
-        top: 20%;
+        margin: 10px auto;
+        padding: 20px;
+        min-height: 100vh; /* Ensure full height on mobile */
     }
+
     .submit-button {
-        width: 60%;
+        width: 80%;
         font-size: 16px;
         padding: 10px;
     }
