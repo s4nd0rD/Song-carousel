@@ -26,8 +26,8 @@
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var referrer = document.referrer;
-        var backLink = document.getElementById('back-link');
+        const referrer = document.referrer;
+        const backLink = document.getElementById('back-link');
         if (referrer.includes('/song-archive')) {
             backLink.href = '/song-archive.html';
         } else {

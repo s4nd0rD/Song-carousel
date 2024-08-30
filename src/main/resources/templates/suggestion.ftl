@@ -13,7 +13,7 @@
     <#else>
         <p class="message">${message}</p>
     </#if>
-    <a href="/" class="back-button">Terug</a>
+    <a href="/song-archive" class="back-button">Terug</a>
 </div>
 </body>
 </html>

@@ -18,7 +18,9 @@
     </ul>
     <div class="suggestion-box">
         <form action="/suggestion" method="post">
-            <textarea name="suggestion" rows="4" placeholder="Welk kinderliedje mis je nog?"></textarea>
+            <label>
+                <textarea name="suggestion" rows="4" placeholder="Welk kinderliedje mis je nog?"></textarea>
+            </label>
             <button type="submit" class="submit-button">Verstuur</button>
         </form>
     </div>
