@@ -13,7 +13,6 @@
     <div class="song-lyrics">
         <p>${song.lyrics?replace('\n', '<br/>')}</p>
     </div>
-    <!-- YouTube embedded player -->
     <iframe class="youtube-player" src="https://www.youtube.com/embed/${song.youTube}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <#if origin??>
         <div class="back-button">
@@ -25,5 +24,16 @@
         </div>
     </#if>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var referrer = document.referrer;
+        var backLink = document.getElementById('back-link');
+        if (referrer.includes('/song-archive')) {
+            backLink.href = '/song-archive.html';
+        } else {
+            backLink.href = '/';
+        }
+    });
+</script>
 </body>
 </html>
