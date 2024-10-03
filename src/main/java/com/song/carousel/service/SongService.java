@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
 
@@ -25,26 +24,25 @@ public class SongService {
     }
 
     public Song getRandomSong() {
-        List<Song> songs = songRepository.findAll();
+        var songs = songRepository.findAll();
         if (songs.isEmpty()) {
             return null;
         }
-        Random random = new Random();
+        var random = new Random();
         return songs.get(random.nextInt(songs.size()));
     }
 
     public ResponseEntity<ByteArrayResource> getImage(String songId) {
-        Optional<Song> optionalSong = songRepository.findById(songId);
+        var optionalSong = songRepository.findById(songId);
         if (optionalSong.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
-        Song song = optionalSong.get();
-        byte[] imageData = song.getImage().getData();
-        String imageName = song.getImage().getName();
-        String contentType = song.getImage().getContentType();
-
-        ByteArrayResource resource = new ByteArrayResource(imageData);
+        var song = optionalSong.get();
+        var imageData = song.getImage().getData();
+        var imageName = song.getImage().getName();
+        var contentType = song.getImage().getContentType();
+        var resource = new ByteArrayResource(imageData);
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_TYPE, contentType)

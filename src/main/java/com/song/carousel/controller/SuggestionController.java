@@ -16,7 +16,7 @@ public class SuggestionController {
     }
 
     @PostMapping("/suggestion")
-    public String handleSuggestion(@RequestParam("suggestion") String suggestion, Model model) {
+    public String handleSuggestion(@RequestParam String suggestion, Model model) {
         emailService.sendEmail("sander.droogsma@incentro.com", "New Song Suggestion", suggestion);
         model.addAttribute("message", "Bedankt voor je suggestie! We gaan er mee aan de slag.");
         return "suggestion";

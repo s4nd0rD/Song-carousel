@@ -16,6 +16,9 @@ public class SongController {
 
     private final SongService songService;
 
+    private static final String SELECTED_SONG = "selected-song";
+    private static final String SONG_NOT_FOUND_CODE = "404";
+
     @Autowired
     public SongController(SongService songService) {
         this.songService = songService;
@@ -31,10 +34,10 @@ public class SongController {
         Song randomSong = songService.getRandomSong();
         if (randomSong == null) {
             model.addAttribute("message", "No songs available.");
-            return "selected-song";
+            return SONG_NOT_FOUND_CODE;
         }
         model.addAttribute("song", randomSong);
-        return "selected-song";
+        return SELECTED_SONG;
     }
 
     @GetMapping("/image/{songId}")
@@ -54,12 +57,12 @@ public class SongController {
         var song = songService.getSongById(songId);
         if (song == null) {
             model.addAttribute("message", "Het liedje is niet gevonden.");
-            return "selected-song";
+            return SONG_NOT_FOUND_CODE;
         }
         model.addAttribute("song", song);
         if (origin != null) {
             model.addAttribute("origin", origin);
         }
-        return "selected-song";
+        return SELECTED_SONG;
     }
 }
