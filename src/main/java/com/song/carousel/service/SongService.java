@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 public class SongService {
 
     private final SongRepository songRepository;
+    private final Random random = new Random();
 
     @Autowired
     public SongService(SongRepository songRepository) {
@@ -28,8 +29,8 @@ public class SongService {
         if (songs.isEmpty()) {
             return null;
         }
-        var random = new Random();
-        return songs.get(random.nextInt(songs.size()));
+        var randomValue = this.random.nextInt(songs.size());
+        return songs.get(randomValue);
     }
 
     public ResponseEntity<ByteArrayResource> getImage(String songId) {
